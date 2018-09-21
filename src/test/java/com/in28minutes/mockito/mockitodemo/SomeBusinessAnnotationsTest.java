@@ -32,4 +32,10 @@ public class SomeBusinessAnnotationsTest {
 		assertEquals(15, result);
 	}
 
+	@Test
+	public void testFindTheGreatestFromAllData_NoValues() {
+		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {});
+		assertEquals(Integer.MIN_VALUE, businessImpl.findTheGreatestFromAllData());
+	}
+
 }
